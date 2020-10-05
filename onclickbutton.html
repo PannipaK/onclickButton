@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<p id="demo">Click Me</p>
+
+<button onclick="BTC(data)">BTC Price</button>
+<button onclick="ETH(data)">ETH Price</button>
+<button onclick="DOG(data)">DOG Price</button>
+
+<script>
+
+var data = [{ coin: 'BTC', bid: 6850, ask: 6860 },
+  { coin: 'ETH', bid: 184, ask: 185 }, // shitcoin
+  { coin: 'DOG', bid: 0.0020, ask: 0.0021 }]; // shitcoin
+
+function BTC(data){
+  coin=data[0];
+  document.getElementById("demo").innerHTML=price(coin);
+}
+
+function ETH(data){
+  coin=data[1];
+  document.getElementById("demo").innerHTML=price(coin);
+}
+
+function DOG(data){
+  coin=data[2];
+  document.getElementById("demo").innerHTML=price(coin);
+}
+
+function price(coin){
+return (coin.bid+coin.ask)/2;
+}
+
+</script>
+</body>
+</html>
+
+<!--whenever you do the same thing many times,
+ it's better to write a function to do it as line 32 and 33
+for "demo" only need in the element that we want to change
+like this problem we only need on the <p> element-->
